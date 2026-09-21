@@ -1,0 +1,19 @@
+# Ignore local Claude runtime state by default.
+*
+
+# Repository files.
+!.gitignore
+!README.md
+!install.ps1
+
+# Optional portable root instructions.
+!CLAUDE.md
+
+# Authored harness content.
+!agents/
+!agents/**
+!skills/
+!skills/**
+
+# Managed/synchronized skills are restored by their own provider.
+skills/synced/
