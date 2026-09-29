@@ -31,13 +31,34 @@ file differs, installation stops before making changes. Review the reported
 conflicts and, when appropriate, rerun with `-Force`; the previous versions will
 be saved under `.claude\backups\harness-<timestamp>` before being overwritten.
 
+## Install on Linux/macOS
+
+Clone the repository anywhere, then run:
+
+```sh
+./install.sh --dry-run
+./install.sh
+```
+
+The default destination is `~/.claude`. To use another path:
+
+```sh
+./install.sh --target-path /path/to/.claude
+```
+
+The installer is additive: it does not delete destination files. If an existing
+file differs, installation stops before making changes. Review the reported
+conflicts and, when appropriate, rerun with `--force`; the previous versions
+will be saved under `~/.claude/backups/harness-<timestamp>` before being
+overwritten.
+
 ## Publish
 
 Review exactly what Git will include before the first commit:
 
 ```powershell
 git status --short
-git add .gitignore README.md install.ps1 agents skills
+git add .gitignore README.md install.ps1 install.sh agents skills
 git status --short
 git diff --cached
 ```
